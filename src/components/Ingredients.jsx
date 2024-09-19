@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 Ingredients.propTypes = {
-    ingredient: PropTypes.array,
+    ingredient: PropTypes.string,
 };
 
 function Ingredients({ingredient}) {

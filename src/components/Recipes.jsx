@@ -23,9 +23,9 @@ function Recipes() {
         setWantToCook([...wantToCook, recipe]);
     }
     return (
-        <div className='max-w-7xl mx-auto'>
-             <div className='text-center my-12'>
-             <h2 className='capitalize text-3xl font-bold text'>our recipes</h2>
+        <div className='max-w-5xl mx-auto bg-slate-900 rounded-t-3xl'>
+             <div className='text-center my-12 pt-4 text-white'>
+             <h2 className='capitalize text-4xl font-bold text'>our recipes</h2>
              <p className='pt-2 text-lg'>Our healthy delicious recipes can make your life better easier and more enjoyable.</p>
              </div>
              <div className="flex">

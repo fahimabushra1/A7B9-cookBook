@@ -3,13 +3,13 @@ import { FaRegClock } from 'react-icons/fa';
 import { MdOutlineLocalFireDepartment } from 'react-icons/md';
 
 MoreInfoAboutRecipes.propTypes = {
-    preparingTime: PropTypes.number,
+    preparingTime: PropTypes.string,
     calories: PropTypes.number,
 };
 
 function MoreInfoAboutRecipes({preparingTime, calories}) {
     return (
-        <div className='flex items-center gap-6 py-4'>
+        <div className='flex items-center gap-6 py-2'>
            <div className='flex items-center gap-2'>
             <div><FaRegClock /></div>
             <div>{preparingTime}</div>

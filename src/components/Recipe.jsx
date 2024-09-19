@@ -11,19 +11,19 @@ function Recipe({recipe, handleWantToCook}) {
  const {name, image, description,calories, preparing_time, ingredients} = recipe;
     return (
         <div>
-       <div className="card bg-slate-200 max-w-80 max-h-[700px] shadow-xl mx-6">
-  <figure className="px-10 pt-10">
+       <div className="card bg-slate-200 max-w-80 max-h-[600px] shadow-xl mx-6">
+  <figure className="pt-10">
     <img
       src={image}
       alt="Recipes"
-      className="rounded-3xl max-h-40" />
+      className="rounded-3xl w-52 bg-center" />
   </figure>
   <div className="card-body items-left text-left">
     <h2 className="card-title font-bold">{name}</h2>
-    <p className='text-slate-500 pb-4'>{description}</p>
+    <p className='text-slate-500'>{description}</p>
     <hr className='border border-indigo-200' />
-    <p className='font-bold pt-4'>Ingredients: {ingredients.length}</p>
-  <div className='pb-4'>
+    <p className='font-bold pt-2'>Ingredients: {ingredients.length}</p>
+  <div className=''>
   {
         ingredients.map((ingredient, indx) =>
             <Ingredients

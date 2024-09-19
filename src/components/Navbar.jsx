@@ -4,15 +4,15 @@ Navbar.propTypes = {
     
 };
 
-function Navbar(props) {
+function Navbar() {
     return (
-        <div className='max-w-7xl mx-auto'>
-      <div className="navbar bg-base-100">
+        <div className='max-w-5xl mx-auto'>
+      <div className="navbar bg-slate-900 rounded-b-3xl text-white">
   <div className="flex-1">
-    <a className="btn btn-ghost text-2xl font-bold">CookBook</a>
+    <a className="btn btn-ghost text-4xl font-bold">CookBook</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-52 font-bold">
+    <ul className="menu menu-horizontal font-bold">
       <li><a>Home</a></li>
       <li><a>Recipes</a></li>
       <li><a>About</a></li>
