@@ -9,13 +9,19 @@ Recipes.propTypes = {
 };
 
 function Recipes() {
-    const [recipes,setRecipes] = useState();
+    const [recipes,setRecipes] = useState([]);
+    const [wantToCook, setWantToCook] = useState([]);
 
     useEffect(()=>{
         fetch("recipes.json")
         .then(res => res.json())
         .then(data => setRecipes(data))
     },[])
+
+
+    const handleWantToCook =(recipe)=>{
+        setWantToCook([...wantToCook, recipe]);
+    }
     return (
         <div className='max-w-7xl mx-auto'>
              <div className='text-center my-12'>
@@ -28,10 +34,11 @@ function Recipes() {
                     recipes?.map(recipe => <Recipe
                     key={recipe.id}
                     recipe = {recipe}
+                    handleWantToCook = {handleWantToCook}
                     />)
                  }
            </div>
-           <Orders/>
+           <Orders wantToCook={wantToCook}/>
            </div>
         </div>
     );

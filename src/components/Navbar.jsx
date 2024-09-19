@@ -9,10 +9,10 @@ function Navbar(props) {
         <div className='max-w-7xl mx-auto'>
       <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">CookBook</a>
+    <a className="btn btn-ghost text-2xl font-bold">CookBook</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-52">
+    <ul className="menu menu-horizontal px-52 font-bold">
       <li><a>Home</a></li>
       <li><a>Recipes</a></li>
       <li><a>About</a></li>

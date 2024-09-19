@@ -4,9 +4,10 @@ import Ingredients from './Ingredients';
 
 Recipe.propTypes = {
     recipe: PropTypes.object.isRequired,
+    handleWantToCook: PropTypes.func,
 };
 
-function Recipe({recipe}) {
+function Recipe({recipe, handleWantToCook}) {
  const {name, image, description,calories, preparing_time, ingredients} = recipe;
     return (
         <div>
@@ -15,7 +16,7 @@ function Recipe({recipe}) {
     <img
       src={image}
       alt="Recipes"
-      className="rounded-xl" />
+      className="rounded-3xl max-h-40" />
   </figure>
   <div className="card-body items-left text-left">
     <h2 className="card-title font-bold">{name}</h2>
@@ -33,7 +34,7 @@ function Recipe({recipe}) {
     <hr className='border border-indigo-200' />
      <MoreInfoAboutRecipes calories = {calories} preparingTime = {preparing_time}/>
     <div className="card-actions">
-    <button className='bg-[#0BE58A] font-bold text-lg text-black px-4 py-2 rounded-[32px] capitalize'>want to cook</button>
+    <button onClick={()=>handleWantToCook(recipe)} className='bg-[#0BE58A] font-bold text-lg text-black px-4 py-2 rounded-[32px] capitalize'>want to cook</button>
     </div>
   </div>
 </div>
