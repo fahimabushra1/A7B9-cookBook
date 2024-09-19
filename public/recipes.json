@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90&resize=440,400",
+        "name": "Spaghetti Carbonara",
+        "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+        "preparing_time": "20 minutes",
+        "calories": 600,
+        "ingredients": ["spaghetti", "eggs", "parmesan cheese", "pancetta", "black pepper"]
+    },
+    {
+        "id": 2,
+        "image": "https://spiceeats.com/wp-content/uploads/2020/02/Mild-Chicken-Curry.jpg",
+        "name": "Chicken Curry",
+        "description": "A flavorful and spicy dish made with chicken, spices, and coconut milk.",
+        "preparing_time": "40 minutes",
+        "calories": 450,
+        "ingredients": ["chicken", "coconut milk", "curry powder", "onion", "garlic", "ginger"]
+    },
+    {
+        "id": 3,
+        "image": "https://www.thespruceeats.com/thmb/6EOTZ8FWQvDA1svol9UXqugxUls=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/caesar-salad-recipe-256363-3e0462e398f44032bb7b93abc1ea8b31.jpg",
+        "name": "Caesar Salad",
+        "description": "A crisp salad with romaine lettuce, croutons, and a creamy Caesar dressing.",
+        "preparing_time": "15 minutes",
+        "calories": 300,
+        "ingredients": ["romaine lettuce", "croutons", "Caesar dressing", "parmesan cheese", "black pepper"]
+    },
+    {
+        "id": 4,
+        "image": "https://iamhomesteader.com/wp-content/uploads/2022/04/birria-taco-2.jpg",
+        "name": "Beef Tacos",
+        "description": "Delicious tacos filled with seasoned beef, topped with fresh vegetables.",
+        "preparing_time": "30 minutes",
+        "calories": 350,
+        "ingredients": ["taco shells", "ground beef", "lettuce", "tomato", "cheese", "sour cream"]
+    },
+    {
+        "id": 5,
+        "image": "https://thescranline.com/wp-content/uploads/2023/09/FLUFFY-PANCAKES-S-01.jpg",
+        "name": "Fluffy Pancakes",
+        "description": "Light and fluffy pancakes, perfect for breakfast or brunch.",
+        "preparing_time": "25 minutes",
+        "calories": 400,
+        "ingredients": ["flour", "milk", "eggs", "sugar", "baking powder", "butter"]
+    },
+    {
+        "id": 6,
+        "image": "https://food-images.files.bbci.co.uk/food/recipes/easy_chocolate_cake_31070_16x9.jpg",
+        "name": "Chocolate Cake",
+        "description": "Rich and moist chocolate cake, perfect for any celebration.",
+        "preparing_time": "1 hour",
+        "calories": 500,
+        "ingredients": ["flour", "cocoa powder", "sugar", "eggs", "butter", "baking powder"]
+    },
+    {
+        "id": 7,
+        "image": "https://www.thespruceeats.com/thmb/gTNi3OytZQVmxc7_qsPcKhEhWoQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetable-stir-fry-sauce-695104-hero-05-0f29ad92fd7141589cb1a773636d714b.jpg",
+        "name": "Vegetable Stir Fry",
+        "description": "A quick and healthy stir-fry with mixed vegetables and soy sauce.",
+        "preparing_time": "15 minutes",
+        "calories": 250,
+        "ingredients": ["bell peppers", "broccoli", "carrots", "soy sauce", "garlic", "ginger"]
+    },
+    {
+        "id": 8,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm7qYnN69VTfckqZjPPTp_GAKHoM3B8V7pzg&s",
+        "name": "Lentil Soup",
+        "description": "A hearty and nutritious soup made with lentils and vegetables.",
+        "preparing_time": "50 minutes",
+        "calories": 300,
+        "ingredients": ["lentils", "carrots", "celery", "onion", "vegetable broth", "spices"]
+    },
+    {
+        "id": 9,
+        "image": "https://www.southernliving.com/thmb/8M7xjBXyPtC8dkf8JWMSRo4fbZo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Greek-Salad-With-Baked-Feta-Batch59-Beauty-03-8a9f6350bdb04f2f848741fd87bf029a.jpg",
+        "name": "Greek Salad",
+        "description": "A refreshing salad with cucumbers, tomatoes, feta cheese, and olives.",
+        "preparing_time": "10 minutes",
+        "calories": 200,
+        "ingredients": ["cucumbers", "tomatoes", "feta cheese", "olives", "red onion", "olive oil"]
+    },
+    {
+        "id": 10,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3fhK3HLdJ7QRGK0OIsqK_PQtwF6QE65HY7g&s",
+        "name": "Banana Bread",
+        "description": "Moist and sweet banana bread, perfect for breakfast or a snack.",
+        "preparing_time": "1 hour",
+        "calories": 350,
+        "ingredients": ["bananas", "flour", "sugar", "eggs", "butter", "baking soda"]
+    }
+]

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 Banner.propTypes = {
-    
+   
 };
 
-function Banner(props) {
+function Banner() {
     return (
         <div className="max-w-7xl mx-auto text-center mt-12 bg-[url('src/assets/images/banner.png')] text-white space-y-4 p-32 text-wrap mb-12">
            <h1 className='text-5xl font-bold leading-relaxed'>Discover an exceptional cooking <br />
