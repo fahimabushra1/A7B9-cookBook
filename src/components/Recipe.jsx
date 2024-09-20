@@ -11,8 +11,8 @@ function Recipe({recipe, handleWantToCook}) {
  const {name, image, description,calories, preparing_time, ingredients} = recipe;
     return (
         <div>
-       <div className="card bg-slate-200 max-w-80 max-h-[600px] shadow-xl mx-6">
-  <figure className="pt-10">
+       <div className="card bg-slate-200 max-w-96 max-h-[685px] shadow-xl mx-6">
+  <figure className="pt-12">
     <img
       src={image}
       alt="Recipes"

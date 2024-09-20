@@ -3,6 +3,7 @@ import Orders from "./Orders";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Recipe from './Recipe';
+import toast from 'react-hot-toast';
 
 Recipes.propTypes = {
     
@@ -26,7 +27,13 @@ function Recipes() {
 
 
     const handleCurrentlyCooking =(id, recipe)=>{
-        setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
+        if(recipe==id){
+            toast("already included")
+        }
+        else{
+            setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
+        }
+       
         setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
     }
     return (
