@@ -11,6 +11,7 @@ Recipes.propTypes = {
 function Recipes() {
     const [recipes,setRecipes] = useState([]);
     const [wantToCook, setWantToCook] = useState([]);
+    const [currentlyCookingRecipes, setCurrentlyCookingRecipes] = useState([]);
 
     useEffect(()=>{
         fetch("recipes.json")
@@ -21,6 +22,12 @@ function Recipes() {
 
     const handleWantToCook =(recipe)=>{
         setWantToCook([...wantToCook, recipe]);
+    }
+
+
+    const handleCurrentlyCooking =(id, recipe)=>{
+        setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
+        setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
     }
     return (
         <div className='max-w-5xl mx-auto bg-slate-900 rounded-t-3xl'>
@@ -38,7 +45,9 @@ function Recipes() {
                     />)
                  }
            </div>
-           <Orders wantToCook={wantToCook}/>
+           <Orders wantToCook={wantToCook}
+            currentlyCookingRecipes = {currentlyCookingRecipes}
+           handleCurrentlyCooking = {handleCurrentlyCooking}/>
            </div>
         </div>
     );
