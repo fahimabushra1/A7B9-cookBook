@@ -4,11 +4,13 @@ import CurrentlyCookingRecipes from './CurrentlyCookingRecipes';
 
 Orders.propTypes = {
     wantToCook: PropTypes.array.isRequired,
+    totalTime: PropTypes.number.isRequired,
+    totalCalories: PropTypes.number.isRequired,
     currentlyCookingRecipes: PropTypes.array.isRequired,
     handleCurrentlyCooking: PropTypes.func,
 };
 
-function Orders({wantToCook, currentlyCookingRecipes, handleCurrentlyCooking}) {
+function Orders({wantToCook, currentlyCookingRecipes, totalTime, totalCalories, handleCurrentlyCooking}) {
     console.log(wantToCook)
     return (
         <div className='w-2/5 text-white'>
@@ -36,7 +38,8 @@ function Orders({wantToCook, currentlyCookingRecipes, handleCurrentlyCooking}) {
             }
             </table>
             </div>
-            <CurrentlyCookingRecipes currentlyCookingRecipes = {currentlyCookingRecipes}/>
+            <CurrentlyCookingRecipes currentlyCookingRecipes = {currentlyCookingRecipes}
+            totalTime = {totalTime} totalCalories={totalCalories}/>
         </div>
     );
 }

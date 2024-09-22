@@ -13,6 +13,8 @@ function Recipes() {
     const [recipes,setRecipes] = useState([]);
     const [wantToCook, setWantToCook] = useState([]);
     const [currentlyCookingRecipes, setCurrentlyCookingRecipes] = useState([]);
+    const [totalTime, setTotalTime] = useState(0);
+    const [totalCalories, setTotalCalories] = useState(0);
 
     useEffect(()=>{
         fetch("recipes.json")
@@ -21,21 +23,29 @@ function Recipes() {
     },[])
 
 
-    const handleWantToCook =(recipe)=>{
-        setWantToCook([...wantToCook, recipe]);
+    const handleWantToCook =(recipe, id)=>{
+        setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id == id));
+            setWantToCook([...wantToCook, recipe]);
+       
+
+       
+      
     }
 
 
-    const handleCurrentlyCooking =(id, recipe)=>{
-        if(recipe==id){
-            toast("already included")
+    const handleCurrentlyCooking =(id, recipe, time, calories)=>{
+            setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
+        // setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
+        if(wantToCook.length > 1){
+            setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
         }
         else{
-            setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
+            setWantToCook([recipe]);
         }
-       
-        setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
+        setTotalTime(parseInt(totalTime) + parseInt(time));
+        setTotalCalories(parseInt(totalCalories) + parseInt(calories));
     }
+
     return (
         <div className='max-w-5xl mx-auto bg-slate-900 rounded-t-3xl'>
              <div className='text-center my-12 pt-4 text-white'>
@@ -53,6 +63,8 @@ function Recipes() {
                  }
            </div>
            <Orders wantToCook={wantToCook}
+           totalTime = {totalTime}
+           totalCalories = {totalCalories}
             currentlyCookingRecipes = {currentlyCookingRecipes}
            handleCurrentlyCooking = {handleCurrentlyCooking}/>
            </div>

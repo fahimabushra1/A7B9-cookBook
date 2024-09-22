@@ -15,7 +15,7 @@ function Order({wantedRecipe, handleCurrentlyCooking}) {
                   <td>{name}</td>
                   <td>{preparing_time}</td>
                   <td>{calories} calories</td>
-                  <td> <button onClick={()=>handleCurrentlyCooking(id, wantedRecipe)} className='bg-[#0BE58A] font-bold p-2 rounded-lg'>Preparing</button></td>
+                  <td> <button onClick={()=>handleCurrentlyCooking(id, wantedRecipe, preparing_time, calories)} className='bg-[#0BE58A] font-bold p-2 rounded-lg'>Preparing</button></td>
                 </tr>
             </tbody>
         </>

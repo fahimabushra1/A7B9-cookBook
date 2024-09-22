@@ -3,9 +3,12 @@ import CurrentlyCookingRecipe from './CurrentlyCookingRecipe';
 
 CurrentlyCookingRecipes.propTypes = {
     currentlyCookingRecipes: PropTypes.array.isRequired,
+    totalTime: PropTypes.number.isRequired,
+    totalCalories: PropTypes.number.isRequired,
 };
 
-function CurrentlyCookingRecipes({currentlyCookingRecipes}) {
+function CurrentlyCookingRecipes({totalTime, totalCalories, currentlyCookingRecipes}) {
+  console.log(totalTime)
     return (
         <div>
              <div className='text-white'>
@@ -30,6 +33,12 @@ function CurrentlyCookingRecipes({currentlyCookingRecipes}) {
                 currentlyCookingRecipe = {currentlyCookingRecipe}
                 />)
             }
+              <tr>
+                  <td></td>
+                  <td></td>
+                  <td>Total times = {totalTime}</td>
+                  <td>Total calories = {totalCalories}</td>
+                </tr>
             </table>
             </div>
         </div> 
