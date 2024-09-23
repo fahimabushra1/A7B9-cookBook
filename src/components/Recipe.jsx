@@ -12,7 +12,7 @@ function Recipe({recipe, handleWantToCook}) {
  console.log(recipe)
     return (
         <div>
-       <div className="card bg-slate-200  max-h-[670px] shadow-xl mx-6">
+       <div className="card bg-slate-200  lg:max-h-[670px] sm:max-h-72 mb-4 shadow-xl mx-6">
   <figure className="pt-12">
     <img
       src={image}

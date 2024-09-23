@@ -14,7 +14,7 @@ Orders.propTypes = {
 function Orders({wantToCook, currentlyCookingRecipes, handleDeleteCurrentlyCooking, totalTime, totalCalories, handleCurrentlyCooking}) {
     console.log(wantToCook)
     return (
-        <div className='w-2/5 text-white'>
+        <div className='lg:w-2/5 sm:w-full text-white'>
            <h2 className='text-3xl font-bold text-center pb-4 bg-[#77fec5]'>Want to cook: {wantToCook.length}</h2>
            <hr />
           <div className="overflow-x-auto mb-12">

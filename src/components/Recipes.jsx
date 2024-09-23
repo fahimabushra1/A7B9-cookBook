@@ -69,8 +69,8 @@ function Recipes() {
              <h2 className='capitalize text-4xl font-bold text'>our recipes</h2>
              <p className='pt-2 text-lg'>Our healthy delicious recipes can make your life better easier and more enjoyable.</p>
              </div>
-             <div className="flex">
-           <div className='w-3/5 grid grid-cols-2 gap-4'>
+             <div className="lg:flex sm:flex-none">
+           <div className='lg:w-3/5 sm:w-full lg:grid lg:grid-cols-2 sm:grid sm:grid-cols-1 gap-4 mb-12'>
                  {
                     recipes?.map(recipe => <Recipe
                     key={recipe.id}
