@@ -16,7 +16,7 @@ function CurrentlyCookingRecipe({currentlyCookingRecipe, handleDeleteCurrentlyCo
                   <td>{name}</td>
                   <td>{preparing_time}</td>
                   <td>{calories} calories</td>
-                  <td> <button onClick={()=>handleDeleteCurrentlyCooking(id)} className='bg-[#0BE58A] font-bold p-2 rounded-lg'>Delete</button></td>
+                  <td> <button onClick={()=>handleDeleteCurrentlyCooking(id, preparing_time, calories)} className='bg-[#0BE58A] font-bold p-2 rounded-lg'>Delete</button></td>
                 </tr>
             </tbody>
         </>

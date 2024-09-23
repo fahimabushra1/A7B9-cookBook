@@ -29,7 +29,15 @@ function Recipes() {
         const isAlreadyAdded = wantToCook.some(item => item.id === recipe.id)
 
         if(isAlreadyAdded){
-          toast("This recipe is already enlisted!")
+          toast('This recipe is already enlisted', {
+            style: {
+              border: '1px solid #0BE58A',
+              padding: '16px',
+              color: '#0BE58A',
+              borderRadius: '10px',
+              background: '#0f172a ',
+            },
+          });
         }else {
           const newWantToCook = [...wantToCook, recipe];
           setWantToCook(newWantToCook);
@@ -41,25 +49,34 @@ function Recipes() {
         const isAlreadyAdded = currentlyCookingRecipes.some(item => item.id === recipe.id)
 
         if(isAlreadyAdded){
-          toast("This recipe is already enlisted!")
+          toast('This recipe is already enlisted', {
+            style: {
+              border: '1px solid #0BE58A',
+              padding: '16px',
+              color: '#0BE58A',
+              borderRadius: '10px',
+              background: '#0f172a ',
+            },
+          });
         }else {
           const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
           setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
+          setTotalTime(parseInt(totalTime) + parseInt(time));
         }
         if(wantToCook.length > 1){
-            setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
+            setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id));
         }
         else{
             setWantToCook([recipe]);
         }
-        setTotalTime(parseInt(totalTime) + parseInt(time));
+        // setTotalTime(parseInt(totalTime) + parseInt(time));
         setTotalCalories(parseInt(totalCalories) + parseInt(calories));
     }
 
     const handleDeleteCurrentlyCooking = (id, time, calories) =>{
         setCurrentlyCookingRecipes(currentlyCookingRecipes.filter(currentlyCookingRecipe=>currentlyCookingRecipe.id !== id));
 
-        setSubtractTime(parseInt(subtractTime) - parseInt(time));
+        setTotalTime(parseInt(totalTime) - parseInt(time));
         setTotalCalories(parseInt(totalCalories) - parseInt(calories));
     }
 
