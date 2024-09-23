@@ -62,15 +62,14 @@ function Recipes() {
           const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
           setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
           setTotalTime(parseInt(totalTime) + parseInt(time));
+          setTotalCalories(parseInt(totalCalories) + parseInt(calories));
         }
         if(wantToCook.length > 1){
             setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id));
         }
         else{
             setWantToCook([recipe]);
-        }
-        // setTotalTime(parseInt(totalTime) + parseInt(time));
-        setTotalCalories(parseInt(totalCalories) + parseInt(calories));
+        }   
     }
 
     const handleDeleteCurrentlyCooking = (id, time, calories) =>{
