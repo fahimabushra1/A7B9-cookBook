@@ -8,9 +8,10 @@ Orders.propTypes = {
     totalCalories: PropTypes.number.isRequired,
     currentlyCookingRecipes: PropTypes.array.isRequired,
     handleCurrentlyCooking: PropTypes.func,
+    handleDeleteCurrentlyCooking:PropTypes.func,
 };
 
-function Orders({wantToCook, currentlyCookingRecipes, totalTime, totalCalories, handleCurrentlyCooking}) {
+function Orders({wantToCook, currentlyCookingRecipes, handleDeleteCurrentlyCooking, totalTime, totalCalories, handleCurrentlyCooking}) {
     console.log(wantToCook)
     return (
         <div className='w-2/5 text-white'>
@@ -39,6 +40,7 @@ function Orders({wantToCook, currentlyCookingRecipes, totalTime, totalCalories, 
             </table>
             </div>
             <CurrentlyCookingRecipes currentlyCookingRecipes = {currentlyCookingRecipes}
+            handleDeleteCurrentlyCooking = {handleDeleteCurrentlyCooking}
             totalTime = {totalTime} totalCalories={totalCalories}/>
         </div>
     );

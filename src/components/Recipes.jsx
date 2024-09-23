@@ -15,6 +15,8 @@ function Recipes() {
     const [currentlyCookingRecipes, setCurrentlyCookingRecipes] = useState([]);
     const [totalTime, setTotalTime] = useState(0);
     const [totalCalories, setTotalCalories] = useState(0);
+    const [subtractTime, setSubtractTime] = useState();
+    // const [subtractCalories, setSubtractCalories] = useState();
 
     useEffect(()=>{
         fetch("recipes.json")
@@ -23,19 +25,27 @@ function Recipes() {
     },[])
 
 
-    const handleWantToCook =(recipe, id)=>{
-        setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id == id));
-            setWantToCook([...wantToCook, recipe]);
-       
+    const handleWantToCook =(recipe)=>{
+        const isAlreadyAdded = wantToCook.some(item => item.id === recipe.id)
 
-       
-      
+        if(isAlreadyAdded){
+          toast("This recipe is already enlisted!")
+        }else {
+          const newWantToCook = [...wantToCook, recipe];
+          setWantToCook(newWantToCook);
+        }
     }
 
 
     const handleCurrentlyCooking =(id, recipe, time, calories)=>{
-            setCurrentlyCookingRecipes([...currentlyCookingRecipes, recipe]);
-        // setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
+        const isAlreadyAdded = currentlyCookingRecipes.some(item => item.id === recipe.id)
+
+        if(isAlreadyAdded){
+          toast("This recipe is already enlisted!")
+        }else {
+          const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
+          setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
+        }
         if(wantToCook.length > 1){
             setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id))
         }
@@ -44,6 +54,13 @@ function Recipes() {
         }
         setTotalTime(parseInt(totalTime) + parseInt(time));
         setTotalCalories(parseInt(totalCalories) + parseInt(calories));
+    }
+
+    const handleDeleteCurrentlyCooking = (id, time, calories) =>{
+        setCurrentlyCookingRecipes(currentlyCookingRecipes.filter(currentlyCookingRecipe=>currentlyCookingRecipe.id !== id));
+
+        setSubtractTime(parseInt(subtractTime) - parseInt(time));
+        setTotalCalories(parseInt(totalCalories) - parseInt(calories));
     }
 
     return (
@@ -66,6 +83,7 @@ function Recipes() {
            totalTime = {totalTime}
            totalCalories = {totalCalories}
             currentlyCookingRecipes = {currentlyCookingRecipes}
+            handleDeleteCurrentlyCooking = {handleDeleteCurrentlyCooking}
            handleCurrentlyCooking = {handleCurrentlyCooking}/>
            </div>
         </div>

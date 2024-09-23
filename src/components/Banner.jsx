@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-
+import banner from "../assets/images/banner.png"
 Banner.propTypes = {
    
 };
 
 function Banner() {
     return (
-        <div className="max-w-5xl bg-no-repeat bg-auto bg-center mx-auto text-center mt-12 bg-[url('src/assets/images/banner.png')] text-white space-y-4 p-32 text-wrap mb-12">
+        <div style={{backgroundImage: `url(${banner})`}} className="max-w-5xl bg-no-repeat bg-auto bg-center mx-auto text-center mt-12 text-white space-y-4 p-32 text-wrap mb-12">
            <h1 className='text-5xl font-bold leading-relaxed'>Discover an exceptional cooking <br />
            class tailored for you!</h1>
            <p className='text-wrap text-lg'>Learn and Master Basic cooking, cutting, baking, kitchen management, training and 40+ live classes 

@@ -5,9 +5,10 @@ CurrentlyCookingRecipes.propTypes = {
     currentlyCookingRecipes: PropTypes.array.isRequired,
     totalTime: PropTypes.number.isRequired,
     totalCalories: PropTypes.number.isRequired,
+    handleDeleteCurrentlyCooking:PropTypes.func,
 };
 
-function CurrentlyCookingRecipes({totalTime, totalCalories, currentlyCookingRecipes}) {
+function CurrentlyCookingRecipes({totalTime, totalCalories, handleDeleteCurrentlyCooking, currentlyCookingRecipes}) {
   console.log(totalTime)
     return (
         <div>
@@ -31,6 +32,7 @@ function CurrentlyCookingRecipes({totalTime, totalCalories, currentlyCookingReci
                 <CurrentlyCookingRecipe
                 key={currentlyCookingRecipe.id}
                 currentlyCookingRecipe = {currentlyCookingRecipe}
+                handleDeleteCurrentlyCooking = {handleDeleteCurrentlyCooking}
                 />)
             }
               <tr>
