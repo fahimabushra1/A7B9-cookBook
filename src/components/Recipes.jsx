@@ -15,8 +15,6 @@ function Recipes() {
     const [currentlyCookingRecipes, setCurrentlyCookingRecipes] = useState([]);
     const [totalTime, setTotalTime] = useState(0);
     const [totalCalories, setTotalCalories] = useState(0);
-    const [subtractTime, setSubtractTime] = useState();
-    // const [subtractCalories, setSubtractCalories] = useState();
 
     useEffect(()=>{
         fetch("recipes.json")
@@ -58,7 +56,8 @@ function Recipes() {
               background: '#0f172a ',
             },
           });
-        }else {
+        }
+        else {
           const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
           setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
           setTotalTime(parseInt(totalTime) + parseInt(time));
