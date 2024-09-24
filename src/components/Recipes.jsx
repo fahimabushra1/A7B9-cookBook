@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Recipe from './Recipe';
 import toast from 'react-hot-toast';
+import {  addToLocalS, addToLS, getStoredWantToCook, removeFromLS } from '../utilities/localStorage';
 
+// export default Recipes;
 Recipes.propTypes = {
     
 };
@@ -23,24 +25,62 @@ function Recipes() {
     },[])
 
 
-    const handleWantToCook =(recipe)=>{
-        const isAlreadyAdded = wantToCook.some(item => item.id === recipe.id)
+      // load want to cook data from local storage
 
-        if(isAlreadyAdded){
-          toast('This recipe is already enlisted', {
-            style: {
-              border: '1px solid #0BE58A',
-              padding: '16px',
-              color: '#0BE58A',
-              borderRadius: '10px',
-              background: '#0f172a ',
-            },
-          });
-        }else {
-          const newWantToCook = [...wantToCook, recipe];
-          setWantToCook(newWantToCook);
+      useEffect(()=>{
+        if(recipes.length){
+            const storedWantToCook = getStoredWantToCook();
+            console.log(storedWantToCook);
+             const savedWantToCook = [];
+             for(const id of storedWantToCook){
+              console.log(id)
+             const wantToCook = recipes.find(recipe => recipe.id === id)
+             if(wantToCook){ 
+                 savedWantToCook.push(wantToCook)
+                }
+          }
+          setWantToCook(savedWantToCook)
         }
+    },[recipes])
+     
+    // load currently cooking data from local storage
+
+    //   useEffect(()=>{
+    //      if(wantToCook.length){
+    //         const storedCurrentlyCookingRecipes =  getStoredCurrentlyCookingRecipes();
+    //         console.log(storedCurrentlyCookingRecipes);
+    //          const savedCurrentlyCookingRecipes = [];
+    //          for(const id of storedCurrentlyCookingRecipes){
+    //           console.log(id)
+    //          const currentlyCookingRecipes = wantToCook.find(recipe => recipe.id === id)
+    //          if(currentlyCookingRecipes){ 
+    //              savedCurrentlyCookingRecipes.push(currentlyCookingRecipes)
+    //             }
+    //       }
+    //       setCurrentlyCookingRecipes(savedCurrentlyCookingRecipes)
+    //     }
+    // },[wantToCook])
+
+
+    function handleWantToCook(recipe) {
+    const isAlreadyAdded = wantToCook.some(item => item.id === recipe.id);
+
+    if (isAlreadyAdded) {
+      toast('This recipe is already enlisted', {
+        style: {
+          border: '1px solid #0BE58A',
+          padding: '16px',
+          color: '#0BE58A',
+          borderRadius: '10px',
+          background: '#0f172a ',
+        },
+      });
+    } else {
+      const newWantToCook = [...wantToCook, recipe];
+      setWantToCook(newWantToCook);
+      addToLS(recipe.id);
     }
+  }
 
 
     const handleCurrentlyCooking =(id, recipe, time, calories)=>{
@@ -60,11 +100,13 @@ function Recipes() {
         else {
           const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
           setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
+            // addToLocalS(recipe.id);
           setTotalTime(parseInt(totalTime) + parseInt(time));
           setTotalCalories(parseInt(totalCalories) + parseInt(calories));
         }
         if(wantToCook.length > 1){
             setWantToCook(wantToCook.filter(wantedRecipe=>wantedRecipe.id !== id));
+            removeFromLS(id);
         }
         else{
             setWantToCook([recipe]);
@@ -73,7 +115,7 @@ function Recipes() {
 
     const handleDeleteCurrentlyCooking = (id, time, calories) =>{
         setCurrentlyCookingRecipes(currentlyCookingRecipes.filter(currentlyCookingRecipe=>currentlyCookingRecipe.id !== id));
-
+        // removeFromLocalS(id);
         setTotalTime(parseInt(totalTime) - parseInt(time));
         setTotalCalories(parseInt(totalCalories) - parseInt(calories));
     }
