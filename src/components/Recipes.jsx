@@ -101,7 +101,16 @@ function Recipes() {
           const newCurrentlyCookingRecipes = [...currentlyCookingRecipes, recipe];
           setCurrentlyCookingRecipes(newCurrentlyCookingRecipes);
             // addToLocalS(recipe.id);
-          setTotalTime(parseInt(totalTime) + parseInt(time));
+
+            const timeInt = (time) => { 
+              let value = parseInt(time)
+              if (time.includes('hour')){
+                return value * 60
+              }  else {
+                return value
+              }
+              }
+          setTotalTime(parseInt(totalTime) + timeInt (time));
           setTotalCalories(parseInt(totalCalories) + parseInt(calories));
         }
         if(wantToCook.length > 1){
@@ -116,7 +125,16 @@ function Recipes() {
     const handleDeleteCurrentlyCooking = (id, time, calories) =>{
         setCurrentlyCookingRecipes(currentlyCookingRecipes.filter(currentlyCookingRecipe=>currentlyCookingRecipe.id !== id));
         // removeFromLocalS(id);
-        setTotalTime(parseInt(totalTime) - parseInt(time));
+
+        const timeInt = (time) => { 
+          let value = parseInt(time)
+          if (time.includes('hour')){
+            return value * 60
+          }  else {
+            return value
+          }
+          }
+        setTotalTime(parseInt(totalTime) - timeInt(time));
         setTotalCalories(parseInt(totalCalories) - parseInt(calories));
     }
 
